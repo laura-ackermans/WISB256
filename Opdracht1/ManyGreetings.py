@@ -1,2 +1,3 @@
 name = input("Name? ");
-print("Hello, " + name + "!");
+numberofgreetings = input("How many greetings? ");
+print(numberofgreetings + " x Hello, " + name + "!");
