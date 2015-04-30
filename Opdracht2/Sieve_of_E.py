@@ -3,9 +3,6 @@ T1 = time.perf_counter()
 
 import sys
 
-print('Number of arguments:', len(sys.argv), 'arguments.')
-print('Argument List:', str(sys.argv))
-
 primefile = open(sys.argv[2], 'w')
 
 N = int(sys.argv[1])
@@ -27,8 +24,6 @@ primes = []
 for i in range(2, N+1):
     if isPrime[i] == True: 
         primes.append(i)
-  
-print(primes)
 
 # schrijf priemgetallen naar file
 
