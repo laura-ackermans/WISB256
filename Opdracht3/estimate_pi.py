@@ -11,12 +11,24 @@ def drop_needle(L):
         else:
             return False
 
-if len(sys.argv) != 4:
-    print("Use: estimate_pi.py N L S")
+if len(sys.argv) != 4 and len(sys.argv) != 3:
+    print("Use: estimate_pi.py N L")
 elif float(sys.argv[2]) > 1:
     print("AssertionError: L should be smaller than 1")
-else:
+elif len(sys.argv) == 4:
     random.seed(int(sys.argv[3]))
+    N = int(sys.argv[1])
+    L = float(sys.argv[2])
+    hit = [False]*N
+    i = 0
+    while i < N: 
+        hit[i] = drop_needle(L)
+        i += 1
+    numberofhits = hit.count(True)
+    pi = N*L*2/numberofhits
+    print(str(numberofhits) +  " hits in " + str(N) + " tries")
+    print("Pi = " + str(pi))
+else:
     N = int(sys.argv[1])
     L = float(sys.argv[2])
     hit = [False]*N
