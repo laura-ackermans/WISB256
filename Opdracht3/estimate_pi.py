@@ -13,7 +13,7 @@ def drop_needle(L):
 
 if len(sys.argv) != 4:
     print("Use: estimate_pi.py N L S")
-elif float(sys.argv[2]) >= 1:
+elif float(sys.argv[2]) > 1:
     print("AssertionError: L should be smaller than 1")
 else:
     random.seed(int(sys.argv[3]))
