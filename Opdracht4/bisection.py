@@ -17,5 +17,3 @@ def findRoot(f,a,b,epsilon):
             return findRoot(f,m,b,epsilon)
         elif f(m) > 0 and f(b) < 0: 
             return findRoot(f,m,b,epsilon)
-        else: 
-            return 'no root'
