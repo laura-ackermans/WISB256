@@ -19,6 +19,13 @@ def findRoot(f,a,b,epsilon):
             return findRoot(f,m,b,epsilon)
         elif f(m) > 0 and f(b) < 0: 
             return findRoot(f,m,b,epsilon)
-        else: 
-            return
             
+def findAllRoots(f,a,b,epsilon):
+    roots = []
+    n = int((b-a)/epsilon)
+    for i in range(0,n): 
+        if f(a+i*epsilon)*f(a+(i+1)*epsilon) <= 0:
+            c = findRoot(f,a+i*epsilon,a+(i+1)*epsilon,epsilon)
+            roots = roots + [c]
+            i = i + 1
+    return (list(set(roots)))
