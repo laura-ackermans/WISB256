@@ -38,3 +38,21 @@ class Vector:
             lengte2 = lengte2 + self.vector[i]**2
         lengte = math.sqrt(lengte2)
         return lengte
+        
+def proj(u,v): 
+    projectie = u.scalar((v.inner(u)/u.inner(u)))
+    return projectie
+    
+def GrammSchmidt(V):
+    vectorlengte = len(V[0].vector)
+    U = [Vector(vectorlengte,0)]*len(V)
+    U[0] = V[0]
+    genormeerd = [Vector(vectorlengte,0)]*len(V)
+    for i in range(1,len(V)): 
+        projectiesom = Vector(vectorlengte, 0)
+        for j in range(0,i): 
+            projectiesom = projectiesom.lincomb(proj(U[j],V[i]),1,1)
+        U[i] = V[i].lincomb(projectiesom,1,-1)
+    for i in range(0,len(V)): 
+        genormeerd[i] = U[i].scalar((1/(U[i].norm())))
+    return genormeerd
