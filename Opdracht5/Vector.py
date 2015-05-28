@@ -2,7 +2,7 @@ import math
 
 class Vector: 
     
-    def __init__(self,n,values): 
+    def __init__(self,n,values = 0): 
         if type(values) != list: 
             self.vector = [values]*n
         else: 
