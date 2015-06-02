@@ -1,7 +1,4 @@
 from scipy.integrate import odeint
-import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axed3D as axes
-from matplotlib.backends.backend_pdf import PdfPages
 import numpy
 import math
 
