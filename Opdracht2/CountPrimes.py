@@ -11,7 +11,7 @@ print('--------------------------------')
 print('pi(N)         = ' + str(numberofprimes))
 print('N/log(N)      = ' + str(nlogn))
 print('ratio         = ' + str(ratio))
-git 
+
 twinprimes = []
 for i in range(0,numberofprimes):
     if lijst[i] == lijst[i+1] - 2: 
